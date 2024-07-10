@@ -1,10 +1,9 @@
 import express from "express";
 import configurationMiddleware from "../config/middleware.js";
 import supabase from "../config/supabase.js";
-import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import dotenvx from "@dotenvx/dotenvx";
-dotenvx.config();
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 configurationMiddleware(app);

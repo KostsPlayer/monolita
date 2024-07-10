@@ -1,8 +1,8 @@
 import express from "express";
 import configurationMiddleware from "./config/middleware.js";
 import authRouter from "./controller/auth.js";
-import dotenvx from "@dotenvx/dotenvx";
-dotenvx.config();
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 configurationMiddleware(app);
