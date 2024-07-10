@@ -53,6 +53,7 @@ function Game() {
     <>
       <div className="game">
         <Navbar defaultList={false} />
+
         <div className="game-wrapper">
           {locations.map((location, index) => {
             const valueContainer = location !== "";
@@ -63,15 +64,21 @@ function Game() {
                 {valueContainer &&
                   (location === "Jawa Timur" ? (
                     <div className="qr">
-                      <QRCodeCanvas size={132} value="https://reactjs.org" />
+                      <QRCodeCanvas
+                        size={132}
+                        value="https://monolita.vercel.app/geography/jawa-timur"
+                      />
                     </div>
-                  ) : location === "Start" ? (
+                  ) : location === "Papua Pegunungan" ? (
                     <div className="qr">
-                      <QRCodeCanvas size={132} value="https://chatgpt.com" />
+                      <QRCodeCanvas
+                        size={132}
+                        value="https://monolita.vercel.app/geography/papua-pegunungan"
+                      />
                     </div>
                   ) : (
                     <div className="qr">
-                      <QRCodeCanvas size={132} value="https://www.npmjs.com" />
+                      <QRCodeCanvas size={132} value="https://www.google.com" />
                     </div>
                   ))}
               </div>
