@@ -13,5 +13,7 @@ const port = process.env.APP_PORT;
 app.listen(port, () => {
   console.log(`${process.env.APP_ENV} with debug=${process.env.APP_DEBUG}`);
 
+  console.log("Hello, Monolita");
+
   console.log(`running server on port ${port}`);
 });
