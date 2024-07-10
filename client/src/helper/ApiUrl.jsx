@@ -1,6 +1,6 @@
 function ApiUrl() {
-  const apiLoginUrl = "http://localhost:5123/auth/login";
-  const apiLogoutUrl = "http://localhost:5123/auth/logout";
+  const apiLoginUrl = "https://monolita-server.vercel.app/auth/login";
+  const apiLogoutUrl = "https://monolita-server.vercel.app/auth/logout";
 
   return { apiLoginUrl, apiLogoutUrl };
 }
