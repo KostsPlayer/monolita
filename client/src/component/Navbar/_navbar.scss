@@ -1,0 +1,66 @@
+@use "./../../helper/mixin" as m;
+@use "./../../helper/variables" as v;
+
+.navbar {
+  width: 100%;
+  height: fit-content;
+  @include m.flex($justify: space-between);
+  padding: 2.2rem 0;
+
+  &-left {
+    width: 100%;
+    height: auto;
+    @include m.flex($justify: flex-start);
+    gap: 2.1rem;
+
+    .logo {
+      @include m.logo();
+    }
+
+    .list {
+      @include m.list-link();
+    }
+  }
+
+  &-right {
+    width: 100%;
+    height: auto;
+    @include m.flex($justify: flex-end);
+    gap: 1.1rem;
+
+    .social-icon {
+      font-size: 1.25rem;
+      color: map-get($map: v.$main, $key: "white");
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+
+      &.brown {
+        color: map-get($map: v.$main, $key: "light-brown");
+
+        &:hover {
+          color: map-get($map: v.$main, $key: "dark-brown");
+        }
+      }
+
+      &:hover {
+        color: #fff;
+      }
+    }
+
+    .go-auth {
+      border: 0.15rem solid map-get($map: v.$main, $key: "white");
+      padding: 0.3rem 0.8rem;
+      color: map-get($map: v.$main, $key: "white");
+      font-weight: 600;
+      letter-spacing: 0.05rem;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      text-decoration: none;
+
+      &:hover {
+        background-color: map-get($map: v.$main, $key: "white");
+        color: map-get($map: v.$main, $key: "light-brown");
+      }
+    }
+  }
+}

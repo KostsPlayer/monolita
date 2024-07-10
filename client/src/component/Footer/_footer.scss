@@ -1,0 +1,53 @@
+@use "./../../helper/mixin" as m;
+@use "./../../helper/variables" as v;
+
+.footer {
+  width: 100%;
+  height: auto;
+  padding: v.$p-vertical-page v.$p-horizontal-page;
+  background-color: #fff;
+  @include m.flex($direction: column);
+  gap: 2.4rem;
+
+  &-top {
+    width: 100%;
+    height: auto;
+    @include m.flex();
+
+    .logo {
+      @include m.logo($size: 1.9rem, $width: 100%);
+    }
+
+    .list {
+      @include m.list-link($fw: 400, $justify: center, $height-hover: 0.07rem);
+    }
+
+    .icon {
+      width: 100%;
+      height: auto;
+      @include m.flex($justify: flex-end);
+      gap: 1.1rem;
+
+      &-social {
+        font-size: 1.15rem;
+        color: map-get($map: v.$main, $key: "light-brown");
+        cursor: pointer;
+
+        &:hover {
+          color: map-get($map: v.$main, $key: "dark-brown");
+        }
+      }
+    }
+  }
+
+  &-bottom {
+    width: 100%;
+    height: auto;
+    @include m.flex($justify: space-between);
+    // margin: 0 0 0 auto;
+
+    span {
+      color: map-get($map: v.$main, $key: "gray");
+    }
+  }
+}

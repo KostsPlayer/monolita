@@ -1,0 +1,30 @@
+$card: (
+  // red
+  "dark-red": #f14a4a,
+  "light-red": #ff6b6b,
+  "lighter-red": #ffd6d6,
+
+  // blue
+  "dark-blue": #6271ff,
+  "light-blue": #828eff,
+  "lighter-blue": #dce0ff,
+
+  // purple
+  "dark-purple": #ac4ef5,
+  "light-purple": #c06fff,
+  "lighter-purple": #edd7ff
+);
+
+$main: (
+  "dark-brown": rgb(140, 90, 77),
+  "light-brown": rgb(201, 148, 132),
+  "black": rgb(19, 21, 22),
+  "white": rgb(245, 245, 245),
+  "gray": rgb(112, 124, 132),
+);
+
+$p-horizontal-page: 3.2rem;
+$p-vertical-page: 4.8rem;
+// $dark-red: #f14a4a;
+// $light-red: #ff6b6b;
+// $lighter-red: #ffd6d6;

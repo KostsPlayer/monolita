@@ -1,0 +1,76 @@
+@use "./../../helper/mixin" as m;
+@use "./../../helper/variables" as v;
+
+.game {
+  width: 100%;
+  height: auto;
+  padding: 0 v.$p-horizontal-page;
+
+  &-wrapper {
+    width: 100%;
+    height: auto;
+    padding: 1.2rem 0 v.$p-vertical-page;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    position: relative;
+
+    .location-container {
+      width: 100%;
+      height: 14.5rem;
+      //   @include m.flex($direction: column, $justify: flex-start);
+      display: grid;
+      grid-template-rows: auto 1fr;
+      border: 0.1rem solid map-get($map: v.$main, $key: "light-brown");
+      gap: .3rem;
+
+      .text {
+        font-size: .95rem;
+        width: 100%;
+        min-height: 3.9rem;
+        height: 100%;
+        font-weight: 500;
+        @include m.flex();
+        padding: .8rem;
+        text-align: center;
+        color: map-get($map: v.$main, $key: "gray");
+      }
+
+      .qr {
+        width: 100%;
+        height: auto;
+        @include m.flex($align: flex-start);
+        // background-color: map-get($map: v.$main, $key: "black");
+      }
+
+      &:not(:nth-child(5n)) {
+        border-right: 0;
+      }
+
+      &:nth-child(5n) {
+        border-right: 0.1rem solid map-get($map: v.$main, $key: "light-brown");
+      }
+
+      &:not(:nth-child(n + 16):nth-child(-n + 20)) {
+        border-bottom: 0;
+      }
+
+      &:nth-child(n + 7):nth-child(-n + 8),
+      &:nth-child(n + 12):nth-child(-n + 13) {
+        border-right: 0;
+      }
+
+      &:nth-child(n + 8):nth-child(-n + 9),
+      &:nth-child(n + 13):nth-child(-n + 14) {
+        border-left: 0;
+      }
+
+      &:nth-child(n + 7):nth-child(-n + 9) {
+        border-bottom: 0;
+      }
+
+      &:nth-child(n + 12):nth-child(-n + 14) {
+        border-top: 0;
+      }
+    }
+  }
+}

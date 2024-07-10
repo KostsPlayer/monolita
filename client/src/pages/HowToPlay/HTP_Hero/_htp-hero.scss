@@ -1,0 +1,37 @@
+@use "./../../../helper/mixin" as m;
+@use "./../../../helper/variables" as v;
+
+.htp-hero {
+  width: 100%;
+  height: 125vh;
+  // max-height: auto;
+  position: relative;
+  padding: 0 v.$p-horizontal-page;
+  @include m.flex($direction: column);
+
+  &-wrapper {
+    @include m.hero-wrapper();
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 65%;
+    height: 100%;
+    background-color: map-get($map: v.$main, $key: "white");
+    z-index: -1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35%;
+    height: 100%;
+    background-color: map-get($map: v.$main, $key: "light-brown");
+    z-index: -1;
+  }
+}

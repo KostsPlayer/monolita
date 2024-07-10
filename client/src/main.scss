@@ -1,0 +1,72 @@
+@use "./helper/mixin" as m;
+@use "./helper/variables" as v;
+@use "./component/Navbar/navbar";
+@use "./component/Footer/footer";
+@use "./component/Card/card";
+@use "./pages/Login/login";
+@use "./pages/Home/H_Hero/h-hero";
+@use "./pages/Home/H_Reason/h-reason";
+@use "./pages/Home/H_Type/h-type";
+@use "./pages/Home/H_Benefit/h-benefit";
+@use "./pages/Gallery/G_Hero/g-hero";
+@use "./pages/Gallery/G_Catalog/g-catalog";
+@use "./pages/HowToPlay/HTP_Hero/htp-hero";
+@use "./pages/HowToPlay/HTP_Rules/htp-rules";
+@use "./pages/Game/game";
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: map-get($map: v.$main, $key: "white");
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.Toastify__toast {
+  padding: 1rem;
+  z-index: 9990;
+}
+
+.Toastify__toast-container {
+  width: 30vw;
+}

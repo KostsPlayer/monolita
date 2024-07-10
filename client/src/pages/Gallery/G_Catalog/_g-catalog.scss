@@ -1,0 +1,44 @@
+@use "./../../../helper/mixin" as m;
+@use "./../../../helper/variables" as v;
+
+.g-catalog {
+  @include m.format-section();
+
+  &-title {
+    @include m.title-section();
+  }
+
+  &-wrapper {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 1.6rem;
+
+    .container {
+      width: 100%;
+      height: 15rem;
+      @include m.flex($direction: column);
+      gap: 0.2rem;
+
+      &:hover {
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: map-get($map: v.$main, $key: "black");
+          opacity: 0.5;
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
