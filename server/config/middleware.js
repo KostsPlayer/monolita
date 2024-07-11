@@ -7,8 +7,8 @@ const configurationMiddleware = (app) => {
     cors({
       origin: [
         "https://monolita.vercel.app",
-        "http://localhost:5173",
         "https://kostsplayer.github.io",
+        "http://localhost:5173",
       ],
       methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
       credentials: true,
