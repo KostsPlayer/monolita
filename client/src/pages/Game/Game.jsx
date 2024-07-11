@@ -57,11 +57,13 @@ function Game() {
         <div className="game-wrapper">
           {locations.map((location, index) => {
             const valueContainer = location !== "";
+            const startWelcome = location !== "Start" && location !== "Welcome";
 
             return (
               <div className="location-container" key={index}>
                 <div className="text">{location}</div>
                 {valueContainer &&
+                  startWelcome &&
                   (location === "Jawa Timur" ? (
                     <div className="qr">
                       <QRCodeCanvas
@@ -78,7 +80,10 @@ function Game() {
                     </div>
                   ) : (
                     <div className="qr">
-                      <QRCodeCanvas size={132} value="https://www.google.com/" />
+                      <QRCodeCanvas
+                        size={132}
+                        value="https://www.google.com/"
+                      />
                     </div>
                   ))}
               </div>
