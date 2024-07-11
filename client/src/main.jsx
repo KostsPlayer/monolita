@@ -21,7 +21,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/how-to-play" element={<HowToPlay />} />
         <Route path="/login" element={<Login />} />
         <Route path="/game" element={<Game />} />
-        <Route path="/geograpy/papua-pegunungan" element={<PapuaPegunungan />} />
+        <Route
+          path="/geograpy/papua-pegunungan"
+          element={<PapuaPegunungan />}
+        />
         <Route path="/geograpy/jawa-timur" element={<JawaTimur />} />
       </Routes>
     </BrowserRouter>

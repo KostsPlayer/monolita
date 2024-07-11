@@ -5,7 +5,8 @@ const Token = () => {
   const [token, setToken] = useState(null);
 
   useEffect(() => {
-    const getToken = Cookies.get("monolitaToken");
+    const getToken =
+      Cookies.get("monolitaToken") || localStorage.getItem("token");
     setToken(getToken);
   }, [Cookies]);
 

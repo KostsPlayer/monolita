@@ -3,14 +3,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useNavigate } from "react-router-dom";
 import Token from "../../helper/Token";
 import axios from "axios";
+import ApiUrl from "../../helper/ApiUrl";
 
 function Footer() {
   const navigate = useNavigate();
   const { token } = Token();
+  const { apiLogoutUrl } = ApiUrl();
 
   const logout = useCallback(async () => {
+    localStorage.removeItem("token");
+
     await axios
-      .delete("http://localhost:5123/auth/logout")
+      .delete(apiLogoutUrl)
       .then((res) => {
         if (res.status === 200) {
           navigate("/login", {

@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Token from "../../helper/Token";
+import ApiUrl from "../../helper/ApiUrl";
 
 function Navbar({ defaultList = true }) {
   const location = useLocation();
@@ -11,6 +12,7 @@ function Navbar({ defaultList = true }) {
   const [active, setActive] = useState(location.pathname);
 
   const { token } = Token();
+  const { apiLogoutUrl } = ApiUrl();
 
   const handleActive = useCallback(
     (path) => {
@@ -28,8 +30,10 @@ function Navbar({ defaultList = true }) {
   };
 
   const logout = useCallback(async () => {
+    localStorage.removeItem("token");
+
     await axios
-      .delete("http://localhost:5123/auth/logout")
+      .delete(apiLogoutUrl)
       .then((res) => {
         if (res.status === 200) {
           navigate("/login", {
@@ -44,6 +48,10 @@ function Navbar({ defaultList = true }) {
         console.error(err);
       });
   }, [navigate]);
+
+  useEffect(() => {
+    console.log(token);
+  }, [token]);
 
   return (
     <>

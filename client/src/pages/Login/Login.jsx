@@ -45,7 +45,7 @@ function Login() {
             navigate("/game", { state: { messageLogin: res.data.message } });
           }
 
-          console.log(res.data);
+          localStorage.setItem("token", res.data.token);
         })
         .catch((err) => {
           console.error(err);

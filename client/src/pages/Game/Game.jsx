@@ -66,19 +66,19 @@ function Game() {
                     <div className="qr">
                       <QRCodeCanvas
                         size={132}
-                        value="https://monolita.vercel.app/geography/jawa-timur"
+                        value="https://monolita.vercel.app/"
                       />
                     </div>
                   ) : location === "Papua Pegunungan" ? (
                     <div className="qr">
                       <QRCodeCanvas
                         size={132}
-                        value="https://monolita.vercel.app/geography/papua-pegunungan"
+                        value="https://monolita.vercel.app/"
                       />
                     </div>
                   ) : (
                     <div className="qr">
-                      <QRCodeCanvas size={132} value="https://www.google.com" />
+                      <QRCodeCanvas size={132} value="https://www.google.com/" />
                     </div>
                   ))}
               </div>
