@@ -4,8 +4,8 @@
 
 .g-hero {
   width: 100%;
-  // min-height: 110vh;
   height: auto;
+  // min-height: 110vh;
   padding: 0 v.$p-horizontal-page;
   position: relative;
   @include m.flex($direction: column, $justify: flex-start);
