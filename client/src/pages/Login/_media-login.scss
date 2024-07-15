@@ -1,0 +1,20 @@
+@use "./../../helper/mixin" as m;
+@use "./../../helper/variables" as v;
+
+@media (max-width: 575.98px) {
+  .login {
+    grid-template-columns: 1fr !important;
+    grid-template-areas: "image" "form" !important;
+    gap: 1.2rem;
+
+    &-image {
+        &::before {
+            height: 156% !important;
+        }
+    }
+
+    &-wrapper {
+        padding: v.$p-media-vertical-page v.$p-media-horizontal-page !important;
+    }
+  }
+}

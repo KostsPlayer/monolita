@@ -1,3 +1,6 @@
+@use "./../../helper/mixin" as m;
+@use "./../../helper/variables" as v;
+
 .wrapper-card {
   width: 100%;
   height: auto;
@@ -13,32 +16,32 @@
     border-radius: 0.4rem;
 
     &.red {
-      background-color: map-get($card, "lighter-red");
+      background-color: map-get(v.$card, "lighter-red");
       .card-location {
-        background-color: map-get($card, "dark-red");
+        background-color: map-get(v.$card, "dark-red");
       }
       .card-image {
-        background-color: map-get($card, "lighter-red");
+        background-color: map-get(v.$card, "lighter-red");
       }
     }
 
     &.blue {
-      background-color: map-get($card, "lighter-blue");
+      background-color: map-get(v.$card, "lighter-blue");
       .card-location {
-        background-color: map-get($card, "dark-blue");
+        background-color: map-get(v.$card, "dark-blue");
       }
       .card-image {
-        background-color: map-get($card, "lighter-blue");
+        background-color: map-get(v.$card, "lighter-blue");
       }
     }
 
     &.purple {
-      background-color: map-get($card, "lighter-purple");
+      background-color: map-get(v.$card, "lighter-purple");
       .card-location {
-        background-color: map-get($card, "dark-purple");
+        background-color: map-get(v.$card, "dark-purple");
       }
       .card-image {
-        background-color: map-get($card, "lighter-purple");
+        background-color: map-get(v.$card, "lighter-purple");
       }
     }
 

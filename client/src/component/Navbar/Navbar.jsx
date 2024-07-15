@@ -4,12 +4,15 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Token from "../../helper/Token";
 import ApiUrl from "../../helper/ApiUrl";
+import Media_Navbar from "./Media_Navbar";
+import { faL } from "@fortawesome/free-solid-svg-icons";
 
 function Navbar({ defaultList = true }) {
   const location = useLocation();
   const navigate = useNavigate();
 
   const [active, setActive] = useState(location.pathname);
+  const [openHamburger, setOpenHamburger] = useState(false);
 
   const { token } = Token();
   const { apiLogoutUrl } = ApiUrl();
@@ -49,9 +52,17 @@ function Navbar({ defaultList = true }) {
       });
   }, [navigate]);
 
+  const handleOpenHamburger = () => {
+    setOpenHamburger(true);
+  };
+
+  const handleCloseHamburger = () => {
+    setOpenHamburger(false);
+  };
+
   useEffect(() => {
-    console.log(token);
-  }, [token]);
+    console.log(openHamburger);
+  });
 
   return (
     <>
@@ -137,6 +148,24 @@ function Navbar({ defaultList = true }) {
             />
           )}
         </div>
+        <FontAwesomeIcon
+          icon="fa-solid fa-bars"
+          className="hamburger"
+          onClick={handleOpenHamburger}
+        />
+        {openHamburger ? (
+          <Media_Navbar
+            className={`media-wrapper ${openHamburger ? "open" : ""}`}
+            active={active}
+            handleActive={handleActive}
+            token={token}
+            handleSocialMedia={handleSocialMedia}
+            logout={logout}
+            handleCloseHamburger={handleCloseHamburger}
+          />
+        ) : (
+          ""
+        )}
       </div>
     </>
   );

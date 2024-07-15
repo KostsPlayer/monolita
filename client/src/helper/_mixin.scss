@@ -1,4 +1,5 @@
 @use "./variables" as v;
+@use "./media-mixin" as mm;
 
 @mixin flex($direction: row, $align: center, $justify: center) {
   display: flex;
@@ -17,13 +18,23 @@
   color: map-get($map: v.$main, $key: "dark-brown");
   cursor: pointer;
   text-decoration: none;
+  line-height: 100%;
+
+  @include mm.media-logo();
 }
 
-@mixin list-link($fw: 600, $justify: flex-start, $height-hover: 0.125rem) {
+@mixin list-link(
+  $fw: 600,
+  $height-hover: 0.125rem,
+  $gap-list: 1rem,
+  $justify: flex-start,
+  $align: center,
+  $direction: row
+) {
   width: 100%;
   height: auto;
-  @include flex($justify: $justify);
-  gap: 1rem;
+  @include flex($justify: $justify, $direction: $direction, $align: $align);
+  gap: $gap-list;
   font-weight: $fw;
 
   &-link {
@@ -31,6 +42,7 @@
     text-decoration: none;
     color: map-get($map: v.$main, $key: "black");
     transition: all 0.25s ease-in-out;
+    line-height: 100%;
 
     &.active {
       color: map-get($map: v.$main, $key: "light-brown");
@@ -61,7 +73,47 @@
   }
 }
 
-@mixin hero-wrapper($gap-container: none, $width-description: 79%) {
+@mixin social-icon($fs: 1.25rem, $color: "white", $hover: #fff) {
+  font-size: $fs;
+  color: map-get($map: v.$main, $key: $color);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+
+  &.brown {
+    color: map-get($map: v.$main, $key: "light-brown");
+
+    &:hover {
+      color: map-get($map: v.$main, $key: "dark-brown");
+    }
+  }
+
+  &:hover {
+    color: $hover;
+  }
+}
+
+@mixin go-auth($main-color: "white", $hover-color: "light-brown") {
+  border: 0.15rem solid map-get($map: v.$main, $key: $main-color);
+  padding: 0.3rem 0.8rem;
+  color: map-get($map: v.$main, $key: $main-color);
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+
+  &:hover {
+    background-color: map-get($map: v.$main, $key: $main-color);
+    color: map-get($map: v.$main, $key: $hover-color);
+  }
+}
+
+@mixin hero-wrapper(
+  $gap-container: none,
+  $width-description: 79%,
+  $home-image: 0,
+  $pb-hero: v.$p-media-vertical-page
+) {
   width: 100%;
   height: 100%;
   @include flex();
@@ -72,7 +124,7 @@
     height: auto;
     @include flex($direction: column, $align: flex-start);
     gap: 1.6rem;
-    margin-top: -4rem;
+    // margin-top: -4rem;
 
     .welcome {
       width: 100%;
@@ -131,7 +183,8 @@
   .image {
     width: 100%;
     height: fit-content;
-    margin-top: -3rem;
+    padding-top: $home-image;
+    // margin-top: -3rem;
 
     img {
       width: 100%;
@@ -139,15 +192,19 @@
       object-fit: cover;
     }
   }
+
+  @include mm.media-hero-wrapper($pb-hero: $pb-hero);
 }
 
-@mixin format-section() {
+@mixin format-section($media-gap: 2.1rem) {
   width: 100%;
   height: auto;
   position: relative;
   padding: v.$p-vertical-page v.$p-horizontal-page;
   @include flex($justify: flex-start, $align: flex-start, $direction: column);
   gap: 2.8rem;
+
+  @include mm.media-format-section($media-gap: $media-gap);
 }
 
 @mixin title-section($color: map-get($map: v.$main, $key: "light-brown")) {
@@ -156,4 +213,7 @@
   width: 100%;
   height: auto;
   color: $color;
+  line-height: 100%;
+
+  @include mm.media-title-section();
 }

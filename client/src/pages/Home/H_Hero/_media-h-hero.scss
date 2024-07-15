@@ -1,0 +1,8 @@
+@use "./../../../helper/mixin" as m;
+@use "./../../../helper/variables" as v;
+
+@media (max-width: 575.98px) {
+  .h-hero {
+    padding: 0 v.$p-media-horizontal-page !important;
+  }
+}

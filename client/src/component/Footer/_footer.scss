@@ -1,5 +1,6 @@
 @use "./../../helper/mixin" as m;
 @use "./../../helper/variables" as v;
+@use "./media-footer";
 
 .footer {
   width: 100%;
@@ -31,6 +32,7 @@
       &-social {
         font-size: 1.15rem;
         color: map-get($map: v.$main, $key: "light-brown");
+        transition: all 0.2s ease-in-out;
         cursor: pointer;
 
         &:hover {

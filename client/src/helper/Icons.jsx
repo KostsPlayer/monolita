@@ -15,10 +15,12 @@ import {
   faLightbulb,
   faHandHoldingHeart,
   faRightFromBracket,
+  faBars,
   faPlay,
   faTrophy,
   faBan,
 } from "@fortawesome/free-solid-svg-icons";
+import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 
 const libraryIcon = library.add(
   faFacebook,
@@ -32,7 +34,9 @@ const libraryIcon = library.add(
   faFaceLaughBeam,
   faLightbulb,
   faHandHoldingHeart,
-  faRightFromBracket
+  faRightFromBracket,
+  faBars,
+  faCircleXmark
 );
 
 function Icons() {

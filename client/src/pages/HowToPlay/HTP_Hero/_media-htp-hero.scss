@@ -1,0 +1,12 @@
+@use "./../../../helper/mixin" as m;
+@use "./../../../helper/variables" as v;
+
+@media (max-width: 575.98px) {
+  .htp-hero {
+    padding: 0 v.$p-media-horizontal-page !important;
+
+    &-wrapper {
+      gap: 1.9rem !important;
+    }
+  }
+}

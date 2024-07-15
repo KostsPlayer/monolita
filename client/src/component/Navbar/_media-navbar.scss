@@ -1,0 +1,29 @@
+@use "./../../helper/mixin" as m;
+@use "./../../helper/variables" as v;
+
+@media (max-width: 575.98px) {
+  .navbar {
+    padding-top: 1.6rem !important;
+
+    &-left .list,
+    &-right {
+      display: none !important;
+    }
+
+    .hamburger {
+      display: block !important;
+      font-size: 1.5rem;
+      color: map-get($map: v.$main, $key: "white");
+      cursor: pointer;
+    }
+
+    &-media-query {
+      .media-wrapper.open {
+        transform: translateY(0);
+        top: 0;
+        opacity: 1;
+        transform-origin: top center;
+      }
+    }
+  }
+}

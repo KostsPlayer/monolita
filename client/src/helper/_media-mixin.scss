@@ -1,0 +1,48 @@
+@use "./variables" as v;
+
+@mixin media-logo($size: 2.1rem) {
+  @media (max-width: 575.98px) {
+    font-size: $size;
+  }
+}
+
+@mixin media-hero-wrapper($pb-hero) {
+  @media (max-width: 575.98px) {
+    flex-direction: column-reverse;
+    gap: 0.8rem;
+
+    .main {
+      gap: 1.1rem;
+      padding-bottom: $pb-hero;
+
+      .title {
+        font-size: 4.3rem;
+      }
+
+      .description {
+        width: 60%;
+      }
+
+      .button {
+        margin-top: 0.4rem;
+      }
+    }
+
+    .image {
+      padding-top: 0;
+    }
+  }
+}
+
+@mixin media-format-section($media-gap) {
+  @media (max-width: 575.98px) {
+    padding: v.$p-media-vertical-page v.$p-media-horizontal-page;
+    gap: $media-gap;
+  }
+}
+
+@mixin media-title-section() {
+  @media (max-width: 575.98px) {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,17 @@
+@use "./../../helper/mixin" as m;
+@use "./../../helper/variables" as v;
+
+@media (max-width: 575.98px) {
+  .footer {
+    padding: v.$p-media-vertical-page v.$p-media-horizontal-page !important;
+    gap: 0.5rem !important;
+
+    &-top .list {
+      display: none !important;
+    }
+
+    &-bottom span {
+      font-size: 0.92rem !important;
+    }
+  }
+}

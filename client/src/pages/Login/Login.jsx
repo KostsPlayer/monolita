@@ -1,10 +1,11 @@
 import React, { useState, useCallback, useEffect } from "react";
-import image from "./../../assets/images/children-playing-board-game-cute-kids-friends-siblings-enjoy-indoor-activity-training-business-skills-using-monopoly-boy-throwing-dice-player-holding-cards.png";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import ApiUrl from "../../helper/ApiUrl";
 import AlertMessage from "../../helper/AlertMessage";
 import { ToastContainer } from "react-toastify";
+import SmoothScroll from "../../helper/SmoothScroll";
+import image from "./../../assets/images/children-playing-board-game-cute-kids-friends-siblings-enjoy-indoor-activity-training-business-skills-using-monopoly-boy-throwing-dice-player-holding-cards.png";
 
 function Login() {
   const [values, setValues] = useState({ name: "", userClass: "" });
@@ -68,6 +69,7 @@ function Login() {
 
   return (
     <>
+      <SmoothScroll />
       <div className="login">
         <div className="login-image">
           <img src={image} alt="" />

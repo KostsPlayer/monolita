@@ -1,8 +1,9 @@
 @use "./../../../helper/mixin" as m;
 @use "./../../../helper/variables" as v;
+@use "./media-h-benefit";
 
 .h-benefit {
-  @include m.format-section();
+  @include m.format-section($media-gap: 0);
 
   &-title {
     @include m.title-section($color: map-get($map: v.$main, $key: "white"));

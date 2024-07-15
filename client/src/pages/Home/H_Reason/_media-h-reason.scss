@@ -1,0 +1,16 @@
+@use "./../../../helper/mixin" as m;
+@use "./../../../helper/variables" as v;
+
+@media (max-width: 575.98px) {
+  .h-reason {
+    padding: 0 v.$p-media-horizontal-page !important;
+
+    &-top {
+      font-size: 1.8rem !important;
+    }
+
+    &-bottom {
+      width: 100% !important;
+    }
+  }
+}
