@@ -4,14 +4,14 @@
 
 .g-hero {
   width: 100%;
-  min-height: 110vh;
+  // min-height: 110vh;
   height: auto;
   padding: 0 v.$p-horizontal-page;
   position: relative;
-  @include m.flex($direction: column);
+  @include m.flex($direction: column, $justify: flex-start);
 
   &-wrapper {
-    @include m.hero-wrapper($gap-container: 2.6rem, $width-description: 100%);
+    @include m.hero-wrapper($gap-container: 2.6rem, $width-description: 100%, $pb-image: 3.8rem, $pt-image: 2.8rem);
   }
 
   &::before {

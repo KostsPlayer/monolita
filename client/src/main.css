@@ -666,7 +666,6 @@
 .h-hero {
   width: 100%;
   height: auto;
-  min-height: 125vh;
   position: relative;
   padding: 0 3.2rem;
   display: flex;
@@ -745,7 +744,8 @@
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
-  padding-top: 2.2rem;
+  padding-bottom: 1.2rem;
+  padding-top: 0;
 }
 .h-hero-wrapper .image img {
   width: 100%;
@@ -773,6 +773,7 @@
   }
   .h-hero-wrapper .image {
     padding-top: 0;
+    padding-bottom: 0;
   }
 }
 .h-hero::before {
@@ -1031,14 +1032,13 @@
 }
 .g-hero {
   width: 100%;
-  min-height: 110vh;
   height: auto;
   padding: 0 3.2rem;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .g-hero-wrapper {
   width: 100%;
@@ -1111,7 +1111,8 @@
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
-  padding-top: 0;
+  padding-bottom: 3.8rem;
+  padding-top: 2.8rem;
 }
 .g-hero-wrapper .image img {
   width: 100%;
@@ -1139,6 +1140,7 @@
   }
   .g-hero-wrapper .image {
     padding-top: 0;
+    padding-bottom: 0;
   }
 }
 .g-hero::before {
@@ -1237,13 +1239,12 @@
 .htp-hero {
   width: 100%;
   height: auto;
-  min-height: 125vh;
   position: relative;
   padding: 0 3.2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .htp-hero-wrapper {
   width: 100%;
@@ -1316,6 +1317,7 @@
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
+  padding-bottom: 1.6rem;
   padding-top: 0;
 }
 .htp-hero-wrapper .image img {
@@ -1344,6 +1346,7 @@
   }
   .htp-hero-wrapper .image {
     padding-top: 0;
+    padding-bottom: 0;
   }
 }
 .htp-hero::before {

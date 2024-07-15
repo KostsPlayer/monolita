@@ -111,7 +111,8 @@
 @mixin hero-wrapper(
   $gap-container: none,
   $width-description: 79%,
-  $home-image: 0,
+  $pb-image: 1.2rem,
+  $pt-image: 0,
   $pb-hero: v.$p-media-vertical-page
 ) {
   width: 100%;
@@ -183,7 +184,8 @@
   .image {
     width: 100%;
     height: fit-content;
-    padding-top: $home-image;
+    padding-bottom: $pb-image;
+    padding-top: $pt-image;
     // margin-top: -3rem;
 
     img {

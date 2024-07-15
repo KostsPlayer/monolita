@@ -5,14 +5,14 @@
 .htp-hero {
   width: 100%;
   height: auto;
-  min-height: 125vh;
+  // min-height: 125vh;
   // max-height: auto;
   position: relative;
   padding: 0 v.$p-horizontal-page;
-  @include m.flex($direction: column);
+  @include m.flex($direction: column, $justify: flex-start);
 
   &-wrapper {
-    @include m.hero-wrapper();
+    @include m.hero-wrapper($pb-image: 1.6rem);
   }
 
   &::before {
