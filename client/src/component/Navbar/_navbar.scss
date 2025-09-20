@@ -6,13 +6,13 @@
   width: 100%;
   height: fit-content;
   @include m.flex($justify: space-between);
-  padding-top: 2.2rem;
+  padding-top: 2.3rem;
 
   &-left {
     width: 100%;
     height: auto;
     @include m.flex($justify: flex-start);
-    gap: 2.1rem;
+    gap: 3.1rem;
 
     .logo {
       @include m.logo();
@@ -27,7 +27,7 @@
     width: 100%;
     height: auto;
     @include m.flex($justify: flex-end);
-    gap: 1.1rem;
+    gap: 1.3rem;
 
     .social-icon {
       @include m.social-icon();

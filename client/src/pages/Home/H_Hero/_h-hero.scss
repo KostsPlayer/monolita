@@ -11,7 +11,7 @@
   @include m.flex($direction: column, $justify: flex-start);
 
   &-wrapper {
-    @include m.hero-wrapper($pb-hero: 4.1rem);
+    @include m.hero-wrapper($pb-hero: 4.1rem, $width-description: 86%);
   }
 
   &::before {
